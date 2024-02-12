@@ -199,15 +199,15 @@ class PlayList {
      */
     private int minIndex(int start) {
         int min = tracks[start].getDuration();
-
-        for (int i = start; i < size;i++) {            
+        int s = start;
+        for (int i = s; i < size;i++) {            
             if (tracks[i].getDuration() < min)
             {
-                min = tracks[start].getDuration();
-                start = i;
+                min = tracks[s].getDuration();
+                s = i;
             }
         }
-        return start;
+        return s;
     }
 
     /**
